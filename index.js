@@ -23,7 +23,7 @@ app.get('/api', (req, res, next) => {
 // get all pets from the database
 app.get('/api/v1/pets', (req, res, next) => {
     // send the pets array as a response
-    res.send(`Return any test as a - ${pets}`);
+    res.send(pets);
 });
 
 // get pet by owner with query string
@@ -34,7 +34,7 @@ app.get('/api/v1/pets/owner', (req, res, next) => {
     const pet = pets.find(pet => pet.owner === owner);
 
     // send the pet as a response
-    res.send(`Returning any test as a - ${pet}`);
+    res.send(owner);
 });
 
 // get pet by name
@@ -46,7 +46,7 @@ app.get('/api/v1/pets/:name', (req, res, next) => {
     const pet = pets.find(pet => pet.name === name);
 
     // send the pet as a response
-    res.send(`Returning any test as a - ${name}`);
+    res.send(name);
 });
 
 app.listen(PORT, () => {
